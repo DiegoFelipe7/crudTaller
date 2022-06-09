@@ -32,11 +32,15 @@ import static org.mockito.Mockito.when;
 public class RolServiceTest {
     @Autowired
     RolRepository rolRepository;
+    @Autowired
+    UsuarioRepository usuarioRepository;
 
     @Test
     public void testGuardarRol(){
-        UsuarioModel usuarioModel=new UsuarioModel();
-        RolesModel rolmodel=new RolesModel(usuarioModel,"Admin");
+        UsuarioModel usuarioModel=new UsuarioModel("aquaman","aqua@gmail.com",99);
+        UsuarioModel usuarioModelRegistrado = usuarioRepository.save(usuarioModel);
+        assertNotNull(usuarioModelRegistrado);
+        RolesModel rolmodel=new RolesModel(usuarioModelRegistrado,"Admin");
         RolesModel rolmodelRegistro = rolRepository.save(rolmodel);
         assertNotNull(rolmodelRegistro);
     }

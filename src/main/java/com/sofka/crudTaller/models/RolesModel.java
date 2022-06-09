@@ -26,6 +26,9 @@ public class RolesModel {
 
     }
 
+    public RolesModel(Long id_rol, String rol) {
+    }
+
     public Long getId() {
         return id;
     }
