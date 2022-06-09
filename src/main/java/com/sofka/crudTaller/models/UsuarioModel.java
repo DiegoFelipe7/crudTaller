@@ -13,13 +13,13 @@ public class UsuarioModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private Long id;
-    @Column(name = "nombre" , length = 25 )
+    @Column(name = "nombre" , length = 25 , nullable = false )
     private String nombre;
 
-    @Column(name = "email" , length = 25 )
+    @Column(name = "email" , length = 25 ,nullable = false )
     private String email;
 
-    @Column(name = "prioridad" , length = 25 )
+    @Column(name = "prioridad" , length = 25 , nullable = false )
     private Integer prioridad;
 
     @OneToMany(mappedBy = "id_rol",

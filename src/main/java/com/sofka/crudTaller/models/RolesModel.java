@@ -13,14 +13,14 @@ public class RolesModel {
     @JoinColumn(name="id_rol")
     @JsonBackReference
     private UsuarioModel id_rol;
-    @Column(name = "rol")
+    @Column(name = "rol" , length = 25 , nullable = false )
     private String rol;
 
-    public RolesModel(Long id, UsuarioModel id_rol, String rol) {
-        this.id = id;
+    public RolesModel(UsuarioModel id_rol, String rol) {
         this.id_rol = id_rol;
         this.rol = rol;
     }
+
 
     public RolesModel() {
 
