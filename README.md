@@ -31,3 +31,7 @@
 ### Metodo Put Rol
 ![update roles](https://user-images.githubusercontent.com/90659322/172757781-9f9c3ec1-fe14-4d03-856e-912e03e8fb2a.PNG)
 
+### Pruebas testing 
+![image](https://user-images.githubusercontent.com/90659322/172765529-920d9e5d-643e-4cda-b41d-a4ef2233def4.png)
+
+
