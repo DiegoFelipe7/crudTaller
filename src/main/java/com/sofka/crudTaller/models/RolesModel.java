@@ -9,8 +9,8 @@ public class RolesModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private Long id;
-    @ManyToOne(fetch = FetchType.LAZY , targetEntity = UsuarioModel.class )
-    @JoinColumn(name="id_categoria")
+    @ManyToOne(fetch = FetchType.LAZY , targetEntity = UsuarioModel.class , cascade = CascadeType.REMOVE )
+    @JoinColumn(name="id_rol")
     @JsonBackReference
     private UsuarioModel id_rol;
     @Column(name = "rol")

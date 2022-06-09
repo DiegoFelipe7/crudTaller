@@ -2,9 +2,10 @@ package com.sofka.crudTaller.controllers;
 
 import com.sofka.crudTaller.models.RolesModel;
 import com.sofka.crudTaller.service.RolService;
+import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
+import org.jboss.logging.Logger;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,6 +15,7 @@ public class RolController {
     @Autowired
     private RolService rolService;
 
+    public static final Logger logger = Logger.getLogger("logger");
     @GetMapping(path = "")
     public List<RolesModel> listaRoles() {
         return this.rolService.listaRol();
@@ -28,7 +30,9 @@ public class RolController {
     public RolesModel guardarRol(@RequestBody RolesModel roles) {
         return this.rolService.guardarRol(roles);
     }
-    @PutMapping(path = "/{id}")
+    @RequestMapping(value = "/{id}",
+            produces = "application/json",
+            method=RequestMethod.PUT)
     public RolesModel actualizarRol(@RequestBody RolesModel roles , @PathVariable("id") Long id ){
         return this.rolService.actualizarRol(roles,id);
     }
